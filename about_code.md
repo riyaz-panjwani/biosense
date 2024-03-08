@@ -40,7 +40,8 @@ Throughout the learning process, the tool shows how much better the student is g
 </ol>
 <br>
 <br>
-## Data Preprocessing
+Data Preprocessing
+<br>
 <ul>
 <li>
 Detecting the images that throw errors and storing them in different lists.
@@ -62,32 +63,34 @@ Create a function to show example training images
 </li>
 </ul>
 <br>
-## Create a model using transfer learning with EfficientNetB3
-A model using transfer learning with EfficientNetB3 is a neural network model that leverages the pre-trained EfficientNetB3 architecture as a starting point and fine-tunes it for a specific image classification task. Transfer learning is a technique in deep learning where a model that has been pre-trained on a large dataset is adapted to a different but related task.
+<br>Create a model using transfer learning with EfficientNetB3<br>
+A model using transfer learning with EfficientNetB3 is a neural network model that leverages the pre-trained EfficientNetB3 architecture as a starting point and fine-tunes it for a specific image classification task. Transfer learning is a technique in deep learning where a model that has been pre-trained on a large dataset is adapted to a different but related task.<br>
 <br>
-### Create a custom Keras callback to continue and optionally set LR or halt training
-Purpose: The LR_ASK callback is a tool to help you control the training of a machine learning model. It gives you the option to continue training the model for more rounds (epochs) or stop the training process.<br>
+<br>Create a custom Keras callback to continue and optionally set LR or halt training<br>
+Purpose: 
+<br>The LR_ASK callback is a tool to help you control the training of a machine learning model. It gives you the option to continue training the model for more rounds (epochs) or stop the training process.<br>
 <br>
-How It Works: When you use this callback during training, you specify three things:
+How It Works: 
+<br>When you use this callback during training, you specify three things:
 <br><br>
-model: This is the name of your machine learning model, which you've already defined and compiled.<br><br>
-epochs: It's the total number of rounds you initially planned for your training.<br><br>
-Ask_epochs: This is like a checkpoint. When your training reaches this checkpoint, you decide whether to continue or stop.<br><br>
-Decision Time: When the training reaches the ask_epochs, you have a choice to make:<br><br>
+model: <br>This is the name of your machine learning model, which you've already defined and compiled.<br><br>
+epochs:<br>It's the total number of rounds you initially planned for your training.<br><br>
+Ask_epochs: <br>This is like a checkpoint. When your training reaches this checkpoint, you decide whether to continue or stop.<br><br>
+Decision Time: <br>When the training reaches the ask_epochs, you have a choice to make:<br><br>
 You can choose to stop training by entering 'H' (for "Halt").
 Or, you can decide to continue training for a few more rounds by specifying the number of additional rounds you want to run (e.g., if you enter 4, it will continue for 4 more rounds).
 <br><br>
-After Training: Once the training is completed, the callback sets the model's weights to the point in time when it performed best, specifically when it had the lowest validation loss. It's like keeping your best work or results.
+After Training: <br>Once the training is completed, the callback sets the model's weights to the point in time when it performed best, specifically when it had the lowest validation loss. It's like keeping your best work or results.
 <br>
-Instantiate custom callback
-Train the model
+Instantiate custom callback<br>
+Train the model<br>
 it is better to make the base model trainable from the outset if you are doing transfer learning<br>
 The model will converge faster and have a lower validation losss. Ensure you initialize the transfer model with imagenet weights.<br><br>
-Define a function to plot the training data
-Make Predictions on the test set
+Define a function to plot the training data<br>
+Make Predictions on the test set<br>
 Define a function which takes in a test generator and an integer test_steps and generates predictions on the test set including a confusion matric and a classification report
 <br>
-Changing the saved .h5 Model to .tflite format for use 
+Changing the saved .h5 Model to .tflite format for use <br>
 To convert it we are going to need TensorFlow <br>
 To do so install it first and then type the following command in command prompt<br>
 tflite_convert --keras_model_file=C:/Users/riyaz/OneDrive/Desktop/AD/keras_model.h5 --output_file=C:/Users/riyaz/OneDrive/Desktop/AD/ad_model.tflite --quantize
