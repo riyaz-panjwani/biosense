@@ -12,30 +12,30 @@
 <li>ipython</li>
 </ol>
 <br>
-## Custom Callback Concept
+Custom Callback Concept
 <ol>
 <li>
-### Monitoring Progress: </li><br>
+Monitoring Progress: </li><br>
 It keeps an eye on how well the program is doing as it learns. Imagine the program is like a student trying to get better grades. This tool looks at how well the student is doing on practice tests.<br>
 <br>
 <li>
-### Saving the Best:</li> <br>
+Saving the Best:</li> <br>
 Whenever the student (the program) gets the best score on a practice test, the tool remembers that score and also the way the student was studying at that time. <br>
  <br>
 <li>
-### Learning from Mistakes:</li> <br>
+Learning from Mistakes:</li> <br>
 If the student does worse on a practice test, the tool says, "Wait, you were doing better before, so let's go back to how you were studying when you did your best." <br>
  <br>
 <li>
-### Lowering the Pace: </li><br> 
+Lowering the Pace: </li><br> 
 If the student keeps doing worse and worse, the tool tells the student to slow down a bit and study more carefully. <br>
  <br>
 <li>
-### User Input: </li><br> 
+User Input: </li><br> 
 Sometimes, the tool asks the user (the teacher) if they want to continue or maybe make some changes. It's like the tool checking with the teacher to see if everything is going well. <br>
  <br>
 <li>
-### rogress Reports: </li><br> 
+Progress Reports: </li><br> 
 Throughout the learning process, the tool shows how much better the student is getting. This helps decide when to stop or make changes in the learning process. <br>
 </ol>
 <br>
@@ -79,15 +79,15 @@ Or, you can decide to continue training for a few more rounds by specifying the 
 <br><br>
 After Training: Once the training is completed, the callback sets the model's weights to the point in time when it performed best, specifically when it had the lowest validation loss. It's like keeping your best work or results.
 <br>
-### Instantiate custom callback
-### Train the model
+Instantiate custom callback
+Train the model
 it is better to make the base model trainable from the outset if you are doing transfer learning<br>
 The model will converge faster and have a lower validation losss. Ensure you initialize the transfer model with imagenet weights.<br><br>
-### Define a function to plot the training data
-## Make Predictions on the test set
+Define a function to plot the training data
+Make Predictions on the test set
 Define a function which takes in a test generator and an integer test_steps and generates predictions on the test set including a confusion matric and a classification report
 <br>
-## Changing the saved .h5 Model to .tflite format for use 
+Changing the saved .h5 Model to .tflite format for use 
 To convert it we are going to need TensorFlow <br>
 To do so install it first and then type the following command in command prompt<br>
 tflite_convert --keras_model_file=C:/Users/riyaz/OneDrive/Desktop/AD/keras_model.h5 --output_file=C:/Users/riyaz/OneDrive/Desktop/AD/ad_model.tflite --quantize
